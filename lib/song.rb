@@ -1,5 +1,3 @@
-require "pry"
-
 class Song
   attr_accessor :name, :artist_name
   @@all = []
@@ -48,7 +46,7 @@ class Song
   end
 
   def self.alphabetical
-
+    @@all.sort_by {|song| song.name}
   end
 
   def self.destroy_all

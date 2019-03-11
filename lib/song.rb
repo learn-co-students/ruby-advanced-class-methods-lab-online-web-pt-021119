@@ -35,11 +35,16 @@ class Song
   end
 
   def self.new_from_filename(file)
-
+    splitted = file.split(/[-\.]/)
+    song = self.new_by_name(splitted[1].strip)
+    song.artist_name = splitted[0].strip
+    song
   end
 
-  def self.create_by_filename(file)
-
+  def self.create_from_filename(file)
+    song = self.new_from_filename(file)
+    song.save
+    song
   end
 
   def self.alphabetical

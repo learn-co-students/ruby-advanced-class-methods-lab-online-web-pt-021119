@@ -32,12 +32,32 @@ class Song
   end
 
   def self.find_or_create_by_name(name)
-    binding.pry
-    if self.find_by_name(name) == name
-      self.find_by_name(name)
-    else
+    if self.find_by_name(name) == nil
       self.create_by_name(name)
+    else
+      self.find_by_name(name)
     end
+  end
+
+  def self.alphabetical
+    self.all.sort_by {|song| song.name}
+  end
+
+  def self.new_from_filename(filename)
+    array = filename.split("-")
+    artist_name = array[0].strip
+    name = array[1].strip.chomp('.mp3')
+    self.create(name, artist_name)
+  end
+
+  def self.create_from_filename(filename)
+    if filename.include?(".mp3") && filename.include?("-")
+      self.new_from_filename(filename)
+    end
+  end
+
+  def self.destroy_all
+    self.all.clear
   end
 
 end

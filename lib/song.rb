@@ -11,10 +11,11 @@ class Song
     self.class.all << self
   end
 
-  def self.create(name = nil)
+  def self.create(name = nil, artist_name = nil)
     song = self.new
     song.name = name
-    @@all << song
+    song.artist_name = artist_name
+    song.save
     song
   end
 
@@ -31,10 +32,10 @@ class Song
   end
 
   def self.find_or_create_by_name(name)
+    binding.pry
     if self.find_by_name(name) == name
-      self.find_by_name(name).name
+      self.find_by_name(name)
     else
-      binding.pry
       self.create_by_name(name)
     end
   end

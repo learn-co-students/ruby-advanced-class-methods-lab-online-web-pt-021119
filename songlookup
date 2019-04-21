@@ -1,0 +1,29 @@
+
+[1mFrom:[0m /home/proactive-hashmap-4080/ruby-advanced-class-methods-lab-online-web-pt-021119/lib/song.rb @ line 66 Song.find_or_create_by_name:
+
+    [1;34m44[0m: [32mdef[0m [1;36mself[0m.[1;34mfind_or_create_by_name[0m(title)
+    [1;34m45[0m: [1;34m# self.find_by_name(title)[0m
+    [1;34m46[0m: [1;34m# found = nil[0m
+    [1;34m47[0m: [1;34m# @@all.each do |song|[0m
+    [1;34m48[0m: [1;34m#   if song.name == title[0m
+    [1;34m49[0m: [1;34m#     found = song[0m
+    [1;34m50[0m: [1;34m#   end[0m
+    [1;34m51[0m: [1;34m# end[0m
+    [1;34m52[0m: [1;34m# found[0m
+    [1;34m53[0m: songlookup = [1;36mnil[0m
+    [1;34m54[0m: songlookup = [1;36mself[0m.find_by_name(title)
+    [1;34m55[0m:   [32mif[0m songlookup != [1;36mnil[0m
+    [1;34m56[0m:     [1;34m# self.create_by_name(title)[0m
+    [1;34m57[0m:       [1;34m# song = self.new[0m
+    [1;34m58[0m:       [1;34m# song.name = title[0m
+    [1;34m59[0m:       [1;34m# @@all.push(song)[0m
+    [1;34m60[0m:       [1;34m# song[0m
+    [1;34m61[0m:       songlookup
+    [1;34m62[0m:       binding.pry
+    [1;34m63[0m:     [32melse[0m
+    [1;34m64[0m:       songlookup = [1;36mself[0m.create_by_name(title)
+    [1;34m65[0m:       songlookup
+ => [1;34m66[0m:       binding.pry
+    [1;34m67[0m:     [32mend[0m
+    [1;34m68[0m: [32mend[0m
+
